@@ -1,0 +1,75 @@
+.spacer {
+  &[data-size="1"] {
+    height: var(--space-1);
+  }
+
+  &[data-size="2"] {
+    height: var(--space-2);
+  }
+
+  &[data-size="3"] {
+    height: var(--space-3);
+  }
+
+  &[data-size="4"] {
+    height: var(--space-4);
+  }
+
+  &[data-size="5"] {
+    height: var(--space-5);
+  }
+
+  &[data-size="6"] {
+    height: var(--space-6);
+  }
+
+  &[data-size="7"] {
+    height: var(--space-7);
+  }
+
+  &[data-size="8"] {
+    height: var(--space-8);
+  }
+
+  &[data-size="9"] {
+    height: var(--space-9);
+  }
+
+  &[data-orientation="horizontal"] {
+    &[data-size="1"] {
+      width: var(--space-1);
+    }
+
+    &[data-size="2"] {
+      width: var(--space-2);
+    }
+
+    &[data-size="3"] {
+      width: var(--space-3);
+    }
+
+    &[data-size="4"] {
+      width: var(--space-4);
+    }
+
+    &[data-size="5"] {
+      width: var(--space-5);
+    }
+
+    &[data-size="6"] {
+      width: var(--space-6);
+    }
+
+    &[data-size="7"] {
+      width: var(--space-7);
+    }
+
+    &[data-size="8"] {
+      width: var(--space-8);
+    }
+
+    &[data-size="9"] {
+      width: var(--space-9);
+    }
+  }
+}
