@@ -10,16 +10,8 @@ export default defineConfig({
       fileName: "index",
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
-      external: ["react"],
-      output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          vue: "React",
-        },
-      },
+      // Remove these deps from the bundled library
+      external: ["react", "react/jsx-runtime", "react-dom"],
     },
   },
 })
