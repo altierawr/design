@@ -59,7 +59,7 @@
   "author": "altierawr <github.com/altierawr>",
   "license": "MIT",
   "engines": {
-    "node": "20"
+    "node": "24"
   },
   "dependencies": {
     "@ladle/react": "^4.0.2",
