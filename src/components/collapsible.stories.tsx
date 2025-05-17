@@ -1,24 +1,37 @@
+import { Meta, StoryObj } from "@storybook/react-vite"
 import { useState } from "react"
 import { BaseButton } from "./base-button"
 import { Collapsible } from "./collapsible"
 
-export const Example = () => {
-  const [isOpen, setIsOpen] = useState(false)
+const meta = {
+  component: Collapsible,
+  title: "Collapsible",
+  tags: ["autodocs"],
+} satisfies Meta<typeof Collapsible>
 
-  return (
-    <>
-      <BaseButton color="blue" onPress={() => setIsOpen(!isOpen)}>
-        Toggle collapsible
-      </BaseButton>
+export default meta
 
-      <Collapsible isOpen={isOpen}>
-        <p>Hello this is the collapsible content</p>
-        <p>Hello this is the collapsible content</p>
-        <p>Hello this is the collapsible content</p>
-        <p>Hello this is the collapsible content</p>
-        <p>Hello this is the collapsible content</p>
-        <p>Hello this is the collapsible content</p>
-      </Collapsible>
-    </>
-  )
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {
+  render: () => {
+    const [isOpen, setIsOpen] = useState(false)
+
+    return (
+      <>
+        <BaseButton color="blue" onPress={() => setIsOpen(!isOpen)}>
+          Toggle collapsible
+        </BaseButton>
+
+        <Collapsible isOpen={isOpen}>
+          <p>Hello this is the collapsible content</p>
+          <p>Hello this is the collapsible content</p>
+          <p>Hello this is the collapsible content</p>
+          <p>Hello this is the collapsible content</p>
+          <p>Hello this is the collapsible content</p>
+          <p>Hello this is the collapsible content</p>
+        </Collapsible>
+      </>
+    )
+  },
 }

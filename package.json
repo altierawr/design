@@ -8,13 +8,14 @@
     "build:w": "concurrently \"pnpm build:ts:w\" \"pnpm build:lib:w\" \"pnpm build:css:w\"",
     "build:css": "postcss src/styles/index.css -o lib/styles.css",
     "build:css:w": "postcss -w src/styles/index.css -o lib/styles.css",
-    "build:ladle": "ladle build",
     "build:lib": "vite build --outDir lib -c vitebuild.config.js",
     "build:lib:w": "vite build -w --emptyOutDir false --outDir lib -c vitebuild.config.js",
     "build:ts": "tsc -p tsconfig.prod.json",
     "build:ts:w": "tsc -w -p tsconfig.prod.json",
     "format": "prettier . --write",
-    "lint": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "storybook": "storybook dev -p 6006 --no-open",
+    "build:storybook": "storybook build"
   },
   "keywords": [],
   "author": "altierawr <github.com/altierawr>",
@@ -23,13 +24,15 @@
     "node": "24"
   },
   "dependencies": {
-    "@ladle/react": "^4.0.2",
     "@radix-ui/colors": "^3.0.0",
     "@tabler/icons-react": "^3.0.3",
     "clsx": "^2.1.0",
     "react-aria-components": "^1.1.1"
   },
   "devDependencies": {
+    "@storybook/addon-docs": "9.0.0-rc.2",
+    "@storybook/addon-onboarding": "9.0.0-rc.2",
+    "@storybook/react-vite": "9.0.0-rc.2",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
@@ -42,6 +45,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "eslint-plugin-storybook": "9.0.0-rc.2",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.0.1",
@@ -49,6 +53,7 @@
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-router-dom": "^6.22.3",
+    "storybook": "9.0.0-rc.2",
     "typescript": "^5.4.2",
     "vite": "^6.3.5"
   },

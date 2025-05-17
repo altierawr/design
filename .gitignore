@@ -1,3 +1,7 @@
 node_modules
 lib
 build
+temp
+
+*storybook.log
+storybook-static
