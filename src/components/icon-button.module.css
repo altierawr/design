@@ -1,6 +1,6 @@
 .iconButton {
-  width: var(--space-7);
-  height: var(--space-7);
+  width: var(--space-8);
+  height: var(--space-8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,21 +11,20 @@
     outline: 2px solid var(--accent-7);
   }
 
-  transition:
-    color 50ms ease-out,
-    background-color 50ms ease-out,
-    border-color 50ms ease-out;
+  transition: color 50ms ease-out,
+  background-color 50ms ease-out,
+  border-color 50ms ease-out;
 }
 
 .solid {
   color: var(--accent-contrast);
   background-color: var(--accent-9);
 
-  &[data-hovered] {
+  &:hover {
     background-color: var(--accent-10);
   }
 
-  &[data-pressed] {
+  &:active:not([data-disabled]) {
     background-color: var(--accent-8);
   }
 
@@ -39,11 +38,11 @@
   color: var(--accent-12);
   background-color: var(--accent-3);
 
-  &[data-hovered] {
+  &:hover {
     background-color: var(--accent-4);
   }
 
-  &[data-pressed] {
+  &:active:not([data-disabled]) {
     background-color: var(--accent-5);
   }
 
@@ -58,12 +57,12 @@
   background-color: var(--accent-3);
   border: 1px solid var(--accent-7);
 
-  &[data-hovered] {
+  &:hover {
     background-color: var(--accent-4);
     border-color: var(--accent-8);
   }
 
-  &[data-pressed] {
+  &:active:not([data-disabled]) {
     background-color: var(--accent-5);
   }
 
@@ -79,12 +78,12 @@
   background-color: transparent;
   border: 1px solid var(--accent-7);
 
-  &[data-hovered] {
+  &:hover {
     background-color: var(--accent-4);
     border-color: var(--accent-8);
   }
 
-  &[data-pressed] {
+  &:active:not([data-disabled]) {
     background-color: var(--accent-5);
   }
 

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite"
 import { useState } from "react"
-import { BaseButton } from "./base-button"
+import { Button } from "./button"
 import { Collapsible } from "./collapsible"
 
 const meta = {
@@ -19,9 +19,9 @@ export const Default: Story = {
 
     return (
       <>
-        <BaseButton color="blue" onPress={() => setIsOpen(!isOpen)}>
+        <Button color="blue" onPress={() => setIsOpen(!isOpen)}>
           Toggle collapsible
-        </BaseButton>
+        </Button>
 
         <Collapsible isOpen={isOpen}>
           <p>Hello this is the collapsible content</p>

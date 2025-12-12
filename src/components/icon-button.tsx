@@ -1,32 +1,29 @@
+import { Button } from "@base-ui/react"
 import clsx from "clsx"
 import { PropsWithChildren } from "react"
-import { BaseButton, TBaseButtonProps } from "./base-button"
+import type { TButtonProps } from "./button"
 import styles from "./icon-button.module.css"
 
-type TProps = TBaseButtonProps & {
+type TProps = TButtonProps & {
   variant: "solid" | "surface" | "soft" | "outline" | "ghost"
 }
 
 const IconButton = ({
   color,
   variant,
-  onPress,
-  onPressStart,
-  onPressEnd,
+  onClick,
   isDisabled,
   children,
 }: PropsWithChildren<TProps>) => {
   return (
-    <BaseButton
-      color={color}
-      onPress={onPress}
-      onPressStart={onPressStart}
-      onPressEnd={onPressEnd}
-      isDisabled={isDisabled}
+    <Button
+      data-accent-color={color}
+      onClick={onClick}
+      disabled={isDisabled}
       className={clsx(styles.iconButton, styles[variant])}
     >
       {children}
-    </BaseButton>
+    </Button>
   )
 }
 

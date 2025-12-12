@@ -24,6 +24,7 @@
     "node": "24"
   },
   "dependencies": {
+    "@base-ui/react": "^1.0.0",
     "@radix-ui/colors": "^3.0.0",
     "@tabler/icons-react": "^3.35.0",
     "clsx": "^2.1.1",
@@ -72,7 +73,7 @@
       "default": "./lib/index.js"
     },
     "./styles.css": "./lib/styles.css",
-    "./components.css": "./lib/style.css",
+    "./components.css": "./lib/index.css",
     "./amber.css": "./src/styles/tokens/colors/amber.css",
     "./blue.css": "./src/styles/tokens/colors/blue.css",
     "./bronze.css": "./src/styles/tokens/colors/bronze.css",

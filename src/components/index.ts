@@ -1,4 +1,4 @@
-export { BaseButton } from "./base-button"
+export { Button } from "./button"
 export { Collapsible } from "./collapsible"
 export { IconButton } from "./icon-button"
 export { Loader } from "./loader"
