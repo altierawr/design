@@ -1,5 +1,6 @@
 export { Button } from "./button"
 export { Collapsible } from "./collapsible"
 export { IconButton } from "./icon-button"
+export { Input } from "./input"
 export { Loader } from "./loader"
 export { Spacer } from "./spacer"

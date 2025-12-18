@@ -1,0 +1,19 @@
+.input {
+  height: var(--space-9);
+  padding-inline: var(--space-4);
+  background-color: var(--accent-3);
+  border: 1px solid var(--accent-7);
+  border-radius: 6px;
+  color: var(--accent-12);
+
+  font-size: 14px;
+
+  &:hover {
+    background-color: var(--accent-4);
+    border-color: var(--accent-8);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-7);
+  }
+}
