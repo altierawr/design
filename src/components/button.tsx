@@ -1,21 +1,23 @@
 import { Button as BaseButton } from "@base-ui/react"
 import clsx from "clsx"
-import { PropsWithChildren } from "react"
+import { ComponentProps, PropsWithChildren } from "react"
 import { TColor } from "@/utils/colors"
 import styles from "./button.module.css"
 
-export type TButtonProps = {
+export type TButtonProps = ComponentProps<typeof BaseButton> & {
   color: TColor
+  variant: "solid" | "surface" | "soft" | "outline" | "ghost"
+  size?: "xs" | "sm" | "md"
   onClick?: () => void
   isDisabled?: boolean
   className?: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any
 }
 
 const Button = ({
   children,
   color,
+  variant,
+  size = "md",
   onClick,
   isDisabled,
   className,
@@ -26,7 +28,7 @@ const Button = ({
       data-accent-color={color}
       onClick={onClick}
       disabled={isDisabled}
-      className={clsx(className, styles.button)}
+      className={clsx(className, styles.button, styles[variant], styles[size])}
       {...props}
     >
       {children}
