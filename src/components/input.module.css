@@ -1,3 +1,8 @@
+.container {
+  position: relative;
+  height: var(--space-9);
+}
+
 .input {
   height: var(--space-9);
   padding-inline: var(--space-4);
@@ -16,4 +21,28 @@
   &:focus-visible {
     outline: 2px solid var(--accent-7);
   }
+}
+
+.inputWithLeftIcon {
+  padding-left: calc(var(--space-3) + 20px + var(--space-2));
+}
+
+.loaderContainer {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.loader {
+  width: var(--space-5) !important;
+  height: var(--space-5) !important;
+}
+
+.iconLeft {
+  color: var(--accent-11);
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
 }

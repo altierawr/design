@@ -28,6 +28,7 @@
     "@radix-ui/colors": "^3.0.0",
     "@tabler/icons-react": "^3.35.0",
     "clsx": "^2.1.1",
+    "lucide-react": "^0.562.0",
     "react-aria-components": "^1.13.0"
   },
   "devDependencies": {
