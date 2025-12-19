@@ -4,7 +4,10 @@ import { ComponentProps, PropsWithChildren } from "react"
 import { TColor } from "@/utils/colors"
 import styles from "./button.module.css"
 
-export type TButtonProps = ComponentProps<typeof BaseButton> & {
+export type TButtonProps = Omit<
+  ComponentProps<typeof BaseButton>,
+  "render" | "nativeButton" | "disabled"
+> & {
   color: TColor
   variant: "solid" | "surface" | "soft" | "outline" | "ghost"
   size?: "xs" | "sm" | "md"

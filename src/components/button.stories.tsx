@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite"
 import { Button } from "./button"
+import { Spacer } from "./spacer"
 
 const meta = {
   component: Button,
@@ -43,6 +44,8 @@ export const Default: Story = {
           </Button>
         </div>
 
+        <Spacer size="3" />
+
         <h3>Small</h3>
         <div
           style={{
@@ -66,6 +69,8 @@ export const Default: Story = {
             Button
           </Button>
         </div>
+
+        <Spacer size="3" />
 
         <h3>Medium</h3>
         <div

@@ -1,20 +1,12 @@
 import { Input as BaseInput } from "@base-ui/react"
 import clsx from "clsx"
-import { Camera, LucideProps } from "lucide-react"
-import {
-  cloneElement,
-  ComponentProps,
-  ForwardRefExoticComponent,
-  ReactElement,
-  RefAttributes,
-} from "react"
+import { ComponentProps, ComponentType } from "react"
+import { TIconProps } from "@/utils/types"
 import styles from "./input.module.css"
 import { Loader } from "./loader"
 
 type TProps = ComponentProps<typeof BaseInput> & {
-  leftIcon?: ForwardRefExoticComponent<
-    Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
-  >
+  leftIcon?: ComponentType<TIconProps>
   placeholder?: string
   isDisabled?: boolean
   isLoading?: boolean
