@@ -1,7 +1,6 @@
 import { Tabs } from "@base-ui/react"
 import clsx from "clsx"
 import { ComponentProps } from "react"
-import { Spacer } from "./spacer"
 import styles from "./tabs.module.css"
 
 type TRootProps = ComponentProps<typeof Tabs.Root>

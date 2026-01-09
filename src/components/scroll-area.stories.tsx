@@ -1,7 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react-vite"
-import { Calendar, Clock, Search } from "lucide-react"
 import { ScrollArea } from "./scroll-area"
-import { Spacer } from "./spacer"
 
 const meta = {
   component: ScrollArea,
