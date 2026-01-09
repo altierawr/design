@@ -19,7 +19,7 @@ export const Default: Story = {
 
     return (
       <>
-        <Button color="blue" onPress={() => setIsOpen(!isOpen)}>
+        <Button variant="solid" color="blue" onClick={() => setIsOpen(!isOpen)}>
           Toggle collapsible
         </Button>
 
