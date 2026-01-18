@@ -42,6 +42,7 @@
     "@typescript-eslint/eslint-plugin": "^8.47.0",
     "@typescript-eslint/parser": "^8.47.0",
     "@vitejs/plugin-react": "^5.1.1",
+    "@vueless/storybook-dark-mode": "^10.0.6",
     "autoprefixer": "^10.4.22",
     "concurrently": "^9.2.1",
     "eslint": "^9.39.1",

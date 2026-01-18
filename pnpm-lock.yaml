@@ -57,6 +57,9 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^5.1.1
         version: 5.1.1(vite@7.2.2(yaml@2.8.0))
+      '@vueless/storybook-dark-mode':
+        specifier: ^10.0.6
+        version: 10.0.6(storybook@10.1.10(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       autoprefixer:
         specifier: ^10.4.22
         version: 10.4.22(postcss@8.5.6)
@@ -1778,6 +1781,12 @@ packages:
 
   '@vitest/utils@3.2.4':
     resolution: {integrity: sha512-fB2V0JFrQSMsCo9HiSq3Ezpdv4iYaXRG1Sx8edX3MwxfyNn83mKiGzOcH+Fkxt4MHxr3y42fQi1oeAInqgX2QA==}
+
+  '@vueless/storybook-dark-mode@10.0.6':
+    resolution: {integrity: sha512-n8Lfk1x25Gc7Q4Ip46S+GV3kgKo4i7K0dVxB6MwvINWc3BWRqcxj+n8rDRxnb6BsyriPRNi5m6QKOGukyLisiA==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      storybook: ^10.0.0
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -5459,6 +5468,12 @@ snapshots:
       '@vitest/pretty-format': 3.2.4
       loupe: 3.2.1
       tinyrainbow: 2.0.0
+
+  '@vueless/storybook-dark-mode@10.0.6(storybook@10.1.10(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))':
+    dependencies:
+      '@storybook/global': 5.0.0
+      lodash-es: 4.17.21
+      storybook: 10.1.10(@testing-library/dom@10.4.0)(prettier@3.6.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
 
   acorn-jsx@5.3.2(acorn@8.15.0):
     dependencies:

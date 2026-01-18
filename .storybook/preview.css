@@ -20,3 +20,15 @@ h6,
 p {
   margin: 0;
 }
+
+.dark .docs-story {
+  background-color: #000;
+}
+
+.dark .sbdocs-wrapper {
+  background-color: #000;
+}
+
+.dark .sbdocs-title {
+  color: #fff;
+}
