@@ -1,0 +1,52 @@
+.positioner {
+  outline: 0;
+}
+
+.popup {
+  padding: 2px;
+  background-color: var(--gray-3);
+  color: var(--gray-12);
+  border-radius: 6px;
+  border: 1px solid var(--gray-6);
+  outline: 0;
+
+  transition:
+    transform 0.15s,
+    opacity 0.15s;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.item {
+  font-size: 14px;
+  line-height: 14px;
+  padding-left: var(--space-4);
+  padding-right: var(--space-6);
+  padding-block: var(--space-2);
+  user-select: none;
+  outline: 0;
+
+  &[data-highlighted] {
+    z-index: 0;
+    position: relative;
+  }
+
+  &[data-highlighted]::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    border-radius: 0.25rem;
+    background-color: var(--gray-5);
+  }
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--gray-6);
+  margin: var(--space-1) var(--space-3);
+}
