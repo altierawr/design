@@ -3,6 +3,7 @@ import clsx from "clsx"
 import { ComponentProps, PropsWithChildren } from "react"
 import { TColor } from "@/utils/colors"
 import styles from "./button.module.css"
+import { Loader } from "./loader"
 
 export type TButtonProps = Omit<
   ComponentProps<typeof BaseButton>,
@@ -13,6 +14,7 @@ export type TButtonProps = Omit<
   size?: "xs" | "sm" | "md"
   onClick?: () => void
   isDisabled?: boolean
+  isLoading?: boolean
   className?: string
 }
 
@@ -23,6 +25,7 @@ const Button = ({
   size = "md",
   onClick,
   isDisabled,
+  isLoading,
   className,
   ...props
 }: PropsWithChildren<TButtonProps>) => {
@@ -32,8 +35,13 @@ const Button = ({
       onClick={onClick}
       disabled={isDisabled}
       className={clsx(className, styles.button, styles[variant], styles[size])}
+      data-is-loading={isLoading || false}
       {...props}
     >
+      <div className={styles.loader} data-is-visible={isLoading || false}>
+        <Loader />
+      </div>
+
       {children}
     </BaseButton>
   )
