@@ -16,17 +16,26 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: () => {
     return (
-      <>
+      <div
+        style={{
+          display: "grid",
+          placeContent: "start",
+          gap: "var(--space-2)",
+        }}
+      >
         <Input placeholder="Search..." />
-        <Spacer size="2" />
+        <Input
+          placeholder="Password"
+          errors={[
+            "Password must be at least 8 characters long",
+            "Password must contain characters, numbers and special characters",
+          ]}
+        />
         <Input placeholder="Search..." leftIcon={Search} />
-        <Spacer size="2" />
         <Input placeholder="Pick date..." leftIcon={Calendar} />
-        <Spacer size="2" />
         <Input placeholder="Pick time..." leftIcon={Clock} />
-        <Spacer size="2" />
         <Input placeholder="Search..." isLoading={true} />
-      </>
+      </div>
     )
   },
 }
