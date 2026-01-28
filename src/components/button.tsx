@@ -6,7 +6,7 @@ import styles from "./button.module.css"
 import { Loader } from "./loader"
 
 export type TButtonProps = Omit<
-  ComponentProps<typeof BaseButton>,
+  BaseButton.Props,
   "render" | "nativeButton" | "disabled"
 > & {
   color: TColor
@@ -15,6 +15,7 @@ export type TButtonProps = Omit<
   onClick?: () => void
   isDisabled?: boolean
   isLoading?: boolean
+  type?: "button" | "reset" | "submit"
   className?: string
 }
 
@@ -26,6 +27,7 @@ const Button = ({
   onClick,
   isDisabled,
   isLoading,
+  type,
   className,
   ...props
 }: PropsWithChildren<TButtonProps>) => {
@@ -36,6 +38,7 @@ const Button = ({
       disabled={isDisabled}
       className={clsx(className, styles.button, styles[variant], styles[size])}
       data-is-loading={isLoading || false}
+      type={type}
       {...props}
     >
       <div className={styles.loader} data-is-visible={isLoading || false}>
