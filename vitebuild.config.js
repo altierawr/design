@@ -11,7 +11,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // Remove these deps from the bundled library
-      external: ["react", "react/jsx-runtime", "react-dom"],
+      external: ["react", "react-dom"],
     },
   },
 })
