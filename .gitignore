@@ -2,6 +2,7 @@ node_modules
 lib
 build
 temp
+*.tgz
 
 *storybook.log
 storybook-static

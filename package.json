@@ -1,7 +1,24 @@
 {
-  "name": "design",
+  "name": "@awlt/design",
   "version": "0.0.0",
-  "description": "",
+  "description": "A react UI component library & design system",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altierawr/design.git"
+  },
+  "bugs": {
+    "url": "https://github.com/altierawr/design/issues"
+  },
+  "homepage": "https://github.com/altierawr/design#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "altierawr <github.com/altierawr>",
+  "keywords": [],
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
   "type": "module",
   "scripts": {
     "build": "pnpm build:lib && pnpm build:ts && pnpm build:css",
@@ -17,9 +34,6 @@
     "storybook": "storybook dev -p 6006 --no-open",
     "build:storybook": "storybook build"
   },
-  "keywords": [],
-  "author": "altierawr <github.com/altierawr>",
-  "license": "MIT",
   "engines": {
     "node": "24"
   },
