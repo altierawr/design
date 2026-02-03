@@ -1,5 +1,6 @@
 .positioner {
   outline: 0;
+  z-index: 999;
 }
 
 .popup {
