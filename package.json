@@ -10,9 +10,6 @@
     "url": "https://github.com/altierawr/design/issues"
   },
   "homepage": "https://github.com/altierawr/design#readme",
-  "publishConfig": {
-    "access": "public"
-  },
   "author": "altierawr <github.com/altierawr>",
   "keywords": [],
   "license": "MIT",
@@ -20,9 +17,23 @@
     "lib"
   ],
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./styles.css": "./lib/styles.css",
+    "./components.css": "./lib/index.css",
+    "./colors/*.css": "./lib/colors/*.css"
+  },
   "scripts": {
-    "build": "pnpm build:lib && pnpm build:ts && pnpm build:css",
-    "build:w": "concurrently \"pnpm build:ts:w\" \"pnpm build:lib:w\" \"pnpm build:css:w\"",
+    "build": "pnpm build:lib && pnpm build:ts && pnpm build:css && pnpm build:colors",
+    "build:colors": "mkdir -p lib/colors && cp src/styles/tokens/colors/*.css lib/colors/",
+    "build:colors:w": "nodemon --watch src/styles/tokens/colors --ext css --exec \"pnpm build:colors\"",
+    "build:w": "concurrently \"pnpm build:ts:w\" \"pnpm build:lib:w\" \"pnpm build:css:w\" \"pnpm build:colors:w\"",
     "build:css": "postcss src/styles/index.css -o lib/styles.css",
     "build:css:w": "postcss -w src/styles/index.css -o lib/styles.css",
     "build:lib": "vite build --outDir lib -c vitebuild.config.js",
@@ -67,6 +78,7 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "eslint-plugin-storybook": "10.0.8",
     "globals": "^16.5.0",
+    "nodemon": "^3.1.11",
     "oxlint": "^1.29.0",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
@@ -81,44 +93,5 @@
   "peerDependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
-  },
-  "exports": {
-    ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
-    },
-    "./styles.css": "./lib/styles.css",
-    "./components.css": "./lib/index.css",
-    "./amber.css": "./src/styles/tokens/colors/amber.css",
-    "./blue.css": "./src/styles/tokens/colors/blue.css",
-    "./bronze.css": "./src/styles/tokens/colors/bronze.css",
-    "./brown.css": "./src/styles/tokens/colors/brown.css",
-    "./crimson.css": "./src/styles/tokens/colors/crimson.css",
-    "./cyan.css": "./src/styles/tokens/colors/cyan.css",
-    "./gold.css": "./src/styles/tokens/colors/gold.css",
-    "./grass.css": "./src/styles/tokens/colors/grass.css",
-    "./gray.css": "./src/styles/tokens/colors/gray.css",
-    "./green.css": "./src/styles/tokens/colors/green.css",
-    "./indigo.css": "./src/styles/tokens/colors/indigo.css",
-    "./iris.css": "./src/styles/tokens/colors/iris.css",
-    "./jade.css": "./src/styles/tokens/colors/jade.css",
-    "./lime.css": "./src/styles/tokens/colors/lime.css",
-    "./mauve.css": "./src/styles/tokens/colors/mauve.css",
-    "./mint.css": "./src/styles/tokens/colors/mint.css",
-    "./olive.css": "./src/styles/tokens/colors/olive.css",
-    "./orange.css": "./src/styles/tokens/colors/orange.css",
-    "./pink.css": "./src/styles/tokens/colors/pink.css",
-    "./plum.css": "./src/styles/tokens/colors/plum.css",
-    "./purple.css": "./src/styles/tokens/colors/purple.css",
-    "./red.css": "./src/styles/tokens/colors/red.css",
-    "./ruby.css": "./src/styles/tokens/colors/ruby.css",
-    "./sage.css": "./src/styles/tokens/colors/sage.css",
-    "./sand.css": "./src/styles/tokens/colors/sand.css",
-    "./sky.css": "./src/styles/tokens/colors/sky.css",
-    "./slate.css": "./src/styles/tokens/colors/slate.css",
-    "./teal.css": "./src/styles/tokens/colors/teal.css",
-    "./tomato.css": "./src/styles/tokens/colors/tomato.css",
-    "./violet.css": "./src/styles/tokens/colors/violet.css",
-    "./yellow.css": "./src/styles/tokens/colors/yellow.css"
   }
 }
