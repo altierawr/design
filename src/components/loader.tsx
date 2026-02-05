@@ -1,9 +1,10 @@
-import clsx from "clsx"
-import styles from "./loader.module.css"
+import clsx from "clsx";
+
+import styles from "./loader.module.css";
 
 type TProps = {
-  className?: string
-}
+  className?: string;
+};
 
 const Loader = ({ className }: TProps) => {
   return (
@@ -21,7 +22,7 @@ const Loader = ({ className }: TProps) => {
       <div />
       <div />
     </div>
-  )
-}
+  );
+};
 
-export { Loader }
+export { Loader };

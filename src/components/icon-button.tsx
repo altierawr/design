@@ -1,25 +1,19 @@
-import clsx from "clsx"
-import { ComponentType } from "react"
-import { TIconProps } from "@/utils/types"
-import { Button } from "./button"
-import type { TButtonProps } from "./button"
-import styles from "./icon-button.module.css"
+import clsx from "clsx";
+import { ComponentType } from "react";
+
+import { TIconProps } from "@/utils/types";
+
+import type { TButtonProps } from "./button";
+
+import { Button } from "./button";
+import styles from "./icon-button.module.css";
 
 type TProps = Omit<TButtonProps, "children"> & {
-  icon: ComponentType<TIconProps>
-}
+  icon: ComponentType<TIconProps>;
+};
 
-const IconButton = ({
-  icon,
-  color,
-  variant,
-  onClick,
-  isDisabled,
-  className,
-  size = "md",
-  ...props
-}: TProps) => {
-  const Icon = icon
+const IconButton = ({ icon, color, variant, onClick, isDisabled, className, size = "md", ...props }: TProps) => {
+  const Icon = icon;
 
   return (
     <Button
@@ -32,7 +26,7 @@ const IconButton = ({
     >
       <Icon size={16} strokeWidth={1.5} />
     </Button>
-  )
-}
+  );
+};
 
-export { IconButton }
+export { IconButton };

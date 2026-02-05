@@ -1,25 +1,24 @@
-import { Meta, StoryObj } from "@storybook/react-vite"
-import { Button } from "./button"
-import * as Menu from "./menu"
+import { Meta, StoryObj } from "@storybook/react-vite";
+
+import { Button } from "./button";
+import * as Menu from "./menu";
 
 const meta = {
   component: Menu.Root,
   title: "Menu",
   tags: ["autodocs"],
-} satisfies Meta<typeof Menu.Root>
+} satisfies Meta<typeof Menu.Root>;
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => {
     return (
       <div className="dark">
         <Menu.Root>
-          <Menu.Trigger render={<Button variant="solid" color="blue" />}>
-            Open Menu
-          </Menu.Trigger>
+          <Menu.Trigger render={<Button variant="solid" color="blue" />}>Open Menu</Menu.Trigger>
 
           <Menu.Content>
             <Menu.Item>Play Next</Menu.Item>
@@ -33,6 +32,6 @@ export const Default: Story = {
           </Menu.Content>
         </Menu.Root>
       </div>
-    )
+    );
   },
-}
+};

@@ -1,16 +1,17 @@
-import { Meta, StoryObj } from "@storybook/react-vite"
-import { Spacer } from "./spacer"
-import * as Tabs from "./tabs"
+import { Meta, StoryObj } from "@storybook/react-vite";
+
+import { Spacer } from "./spacer";
+import * as Tabs from "./tabs";
 
 const meta = {
   component: Tabs.Root,
   title: "Tabs",
   tags: ["autodocs"],
-} satisfies Meta<typeof Tabs.Root>
+} satisfies Meta<typeof Tabs.Root>;
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => {
@@ -30,6 +31,6 @@ export const Default: Story = {
         <Spacer size="2" />
         <Tabs.Panel value="overview">Overview panel</Tabs.Panel>
       </Tabs.Root>
-    )
+    );
   },
-}
+};

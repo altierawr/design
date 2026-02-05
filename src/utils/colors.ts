@@ -29,4 +29,4 @@ export type TColor =
   | "grass"
   | "lime"
   | "mint"
-  | "sky"
+  | "sky";

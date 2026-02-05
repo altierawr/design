@@ -9,9 +9,10 @@
     outline: 2px solid var(--accent-7);
   }
 
-  transition: color 50ms ease-out,
-  background-color 50ms ease-out,
-  border-color 50ms ease-out;
+  transition:
+    color 50ms ease-out,
+    background-color 50ms ease-out,
+    border-color 50ms ease-out;
 }
 
 .xs {

@@ -4,4 +4,4 @@ export default {
     "postcss-nesting": {},
     "postcss-import": {},
   },
-}
+};

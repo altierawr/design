@@ -1,16 +1,17 @@
-import { Meta, StoryObj } from "@storybook/react-vite"
-import { Heart } from "lucide-react"
-import { IconButton } from "./icon-button"
+import { Meta, StoryObj } from "@storybook/react-vite";
+import { Heart } from "lucide-react";
+
+import { IconButton } from "./icon-button";
 
 const meta = {
   component: IconButton,
   title: "Icon Button",
   tags: ["autodocs"],
-} satisfies Meta<typeof IconButton>
+} satisfies Meta<typeof IconButton>;
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
@@ -27,6 +28,6 @@ export const Default: Story = {
         <IconButton color="blue" variant="outline" icon={Heart} />
         <IconButton color="blue" variant="ghost" icon={Heart} />
       </div>
-    )
+    );
   },
-}
+};

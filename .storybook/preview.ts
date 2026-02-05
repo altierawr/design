@@ -1,11 +1,13 @@
-import type { Preview } from "@storybook/react-vite"
-import { create } from "storybook/theming"
-import "../src/styles/index.css"
-import "../src/styles/tokens/colors/blue.css"
-import "../src/styles/tokens/colors/gray.css"
-import "../src/styles/tokens/colors/red.css"
-import "../src/styles/tokens/colors/yellow.css"
-import "./preview.css"
+import type { Preview } from "@storybook/react-vite";
+
+import { create } from "storybook/theming";
+
+import "../src/styles/index.css";
+import "../src/styles/tokens/colors/blue.css";
+import "../src/styles/tokens/colors/gray.css";
+import "../src/styles/tokens/colors/red.css";
+import "../src/styles/tokens/colors/yellow.css";
+import "./preview.css";
 
 const preview: Preview = {
   parameters: {
@@ -28,6 +30,6 @@ const preview: Preview = {
       stylePreview: true,
     },
   },
-}
+};
 
-export default preview
+export default preview;

@@ -1,7 +1,7 @@
-import styles from "./skeleton.module.css"
+import styles from "./skeleton.module.css";
 
 const Skeleton = () => {
-  return <div className={styles.container} />
-}
+  return <div className={styles.container} />;
+};
 
-export { Skeleton }
+export { Skeleton };

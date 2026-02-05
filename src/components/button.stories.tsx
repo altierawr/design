@@ -1,17 +1,18 @@
-import { Meta, StoryObj } from "@storybook/react-vite"
-import { useEffect, useState } from "storybook/internal/preview-api"
-import { Button } from "./button"
-import { Spacer } from "./spacer"
+import { Meta, StoryObj } from "@storybook/react-vite";
+import { useEffect, useState } from "storybook/internal/preview-api";
+
+import { Button } from "./button";
+import { Spacer } from "./spacer";
 
 const meta = {
   component: Button,
   title: "Button",
   tags: ["autodocs"],
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof Button>;
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
@@ -19,13 +20,13 @@ export const Default: Story = {
     variant: "solid",
   },
   render: () => {
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
       setTimeout(() => {
-        setIsLoading(false)
-      }, 1000)
-    }, [])
+        setIsLoading(false);
+      }, 1000);
+    }, []);
 
     return (
       <div>
@@ -131,6 +132,6 @@ export const Default: Story = {
           </Button>
         </div>
       </div>
-    )
+    );
   },
-}
+};
