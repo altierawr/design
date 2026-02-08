@@ -1,0 +1,9 @@
+# @awlt/design
+
+## 0.1.0
+
+### Minor Changes
+
+- 5d7d2dd: Optimize bundle size by externalizing dependecies & using a separate css file for each component
+
+  BREAKING CHANGE: @awlt/design/components.css was removed
