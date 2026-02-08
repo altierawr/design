@@ -1,5 +1,11 @@
 # @awlt/design
 
+## 0.1.1
+
+### Patch Changes
+
+- d14137c: Fixed an issue where the library files were not being bundled into the package
+
 ## 0.1.0
 
 ### Minor Changes
