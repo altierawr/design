@@ -23,8 +23,8 @@
       "default": "./lib/index.js"
     },
     "./styles.css": "./lib/styles.css",
-    "./components.css": "./lib/index.css",
-    "./colors/*.css": "./lib/colors/*.css"
+    "./colors/*.css": "./lib/colors/*.css",
+    "./assets/*.css": "./lib/assets/*.css"
   },
   "publishConfig": {
     "access": "public"
@@ -46,6 +46,7 @@
     "fmt:check": "oxfmt --check",
     "storybook": "storybook dev -p 6006 --no-open",
     "build:storybook": "storybook build",
+    "ci:publish": "pnpm publish -r",
     "prepare": "husky"
   },
   "dependencies": {
@@ -57,9 +58,11 @@
     "react-aria-components": "^1.13.0"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.8",
     "@storybook/addon-docs": "10.0.8",
     "@storybook/addon-onboarding": "10.0.8",
     "@storybook/react-vite": "10.0.8",
+    "@types/node": "^25.2.2",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
@@ -67,6 +70,7 @@
     "autoprefixer": "^10.4.22",
     "baseline-browser-mapping": "^2.9.19",
     "concurrently": "^9.2.1",
+    "glob": "^13.0.1",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
@@ -79,7 +83,8 @@
     "postcss-nesting": "^13.0.2",
     "storybook": "10.1.10",
     "typescript": "^5.9.3",
-    "vite": "^7.2.2"
+    "vite": "npm:rolldown-vite@7.2.5",
+    "vite-plugin-lib-inject-css": "^2.2.2"
   },
   "peerDependencies": {
     "react": "^19.2.0",
