@@ -6,9 +6,9 @@ import styles from "./tabs.module.css";
 
 type TRootProps = ComponentProps<typeof Tabs.Root>;
 
-const Root = ({ defaultValue, className, children, ...props }: TRootProps) => {
+const Root = ({ className, children, ...props }: TRootProps) => {
   return (
-    <Tabs.Root defaultValue={defaultValue} className={clsx(className, styles.root)} {...props}>
+    <Tabs.Root className={clsx(className, styles.root)} {...props}>
       {children}
     </Tabs.Root>
   );
