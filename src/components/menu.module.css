@@ -7,9 +7,13 @@
   padding: 2px;
   background-color: var(--gray-3);
   color: var(--gray-12);
-  border-radius: 6px;
+  border-radius: 12px;
   border: 1px solid var(--gray-6);
   outline: 0;
+
+  box-shadow:
+    0 10px 15px -3px #00000039,
+    0 4px 6px -4px #00000039;
 
   transition:
     transform 0.15s,
@@ -23,11 +27,21 @@
 }
 
 .item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
   font-size: 14px;
   line-height: 14px;
   padding-left: var(--space-4);
   padding-right: var(--space-6);
-  padding-block: var(--space-2);
+  padding-block: var(--space-3);
   user-select: none;
   outline: 0;
 
@@ -41,7 +55,7 @@
     z-index: -1;
     position: absolute;
     inset: 0;
-    border-radius: 0.25rem;
+    border-radius: 9px;
     background-color: var(--gray-5);
   }
 }
