@@ -1,5 +1,16 @@
 # @awlt/design
 
+## 0.2.0
+
+### Minor Changes
+
+- 3ec1cab: Renamed `Menu.Content` -> `Menu.Popup` with new `side` prop
+- 40a00a1: Changed components to use more rounding & cursor pointer if they're clickable
+
+### Patch Changes
+
+- f114352: Fixed an issue with the `Tabs` component where it would get broken if no `defaultValue` was passed
+
 ## 0.1.1
 
 ### Patch Changes
