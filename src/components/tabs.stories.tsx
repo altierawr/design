@@ -30,6 +30,10 @@ export const Default: Story = {
         </Tabs.List>
         <Spacer size="2" />
         <Tabs.Panel value="overview">Overview panel</Tabs.Panel>
+        <Tabs.Panel value="albums">Albums</Tabs.Panel>
+        <Tabs.Panel value="songs">Songs</Tabs.Panel>
+        <Tabs.Panel value="compilations">Compilations</Tabs.Panel>
+        <Tabs.Panel value="appearsOn">Appears on</Tabs.Panel>
       </Tabs.Root>
     );
   },

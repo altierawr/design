@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { useEffect, useState } from "storybook/internal/preview-api";
 
 import { Button } from "./button";
 import { Spacer } from "./spacer";
@@ -20,14 +19,6 @@ export const Default: Story = {
     variant: "solid",
   },
   render: () => {
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
-    }, []);
-
     return (
       <div>
         <h3>Extra small</h3>
@@ -115,7 +106,7 @@ export const Default: Story = {
             gap: "8px",
           }}
         >
-          <Button color="blue" variant="solid" isLoading={isLoading}>
+          <Button color="blue" variant="solid" isLoading>
             Loading Button
           </Button>
           <Button color="blue" variant="surface" isLoading>

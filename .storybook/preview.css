@@ -9,6 +9,7 @@
 * {
   font-family: "Geist";
   box-sizing: border-box;
+  color: var(--gray-12);
 }
 
 h1,
@@ -22,11 +23,11 @@ p {
 }
 
 .dark .docs-story {
-  background-color: #000;
+  background-color: var(--gray-1);
 }
 
 .dark .sbdocs-wrapper {
-  background-color: #000;
+  background-color: var(--gray-1);
 }
 
 .dark .sbdocs-title {
