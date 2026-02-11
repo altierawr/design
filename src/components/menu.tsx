@@ -1,6 +1,6 @@
 import { Menu as BaseMenu } from "@base-ui/react";
 import clsx from "clsx";
-import { ComponentProps, PropsWithChildren } from "react";
+import { ComponentProps } from "react";
 
 import styles from "./menu.module.css";
 
@@ -20,13 +20,15 @@ const Trigger = ({ children, ...props }: TTriggerProps) => {
   return <BaseMenu.Trigger {...props}>{children}</BaseMenu.Trigger>;
 };
 
-type TContentProps = PropsWithChildren;
+type TPopupProps = {
+  side?: ComponentProps<typeof BaseMenu.Positioner>["side"];
+} & ComponentProps<typeof BaseMenu.Popup>;
 
-const Content = ({ children }: TContentProps) => {
+const Popup = ({ className, side, children, ...props }: TPopupProps) => {
   return (
     <BaseMenu.Portal>
-      <BaseMenu.Positioner className={styles.positioner} sideOffset={8}>
-        <BaseMenu.Popup data-accent-color="gray" className={styles.popup}>
+      <BaseMenu.Positioner className={styles.positioner} sideOffset={8} side={side}>
+        <BaseMenu.Popup data-accent-color="gray" className={clsx(styles.popup, className)} {...props}>
           {children}
         </BaseMenu.Popup>
       </BaseMenu.Positioner>
@@ -56,4 +58,4 @@ const Separator = ({ className, ...props }: TSeparatorProps) => {
   return <BaseMenu.Separator className={clsx(className, styles.separator)} data-accent-color="gray" {...props} />;
 };
 
-export { Root, Trigger, Content, Arrow, Item, Separator };
+export { Root, Trigger, Popup, Arrow, Item, Separator };

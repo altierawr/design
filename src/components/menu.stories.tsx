@@ -20,7 +20,7 @@ export const Default: Story = {
         <Menu.Root>
           <Menu.Trigger render={<Button variant="solid" color="blue" />}>Open Menu</Menu.Trigger>
 
-          <Menu.Content>
+          <Menu.Popup>
             <Menu.Item>Play Next</Menu.Item>
             <Menu.Item>Play Last</Menu.Item>
             <Menu.Separator />
@@ -29,7 +29,7 @@ export const Default: Story = {
             <Menu.Separator />
             <Menu.Item>Favorite</Menu.Item>
             <Menu.Item>Share</Menu.Item>
-          </Menu.Content>
+          </Menu.Popup>
         </Menu.Root>
       </div>
     );
