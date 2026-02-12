@@ -1,5 +1,12 @@
 # @awlt/design
 
+## 0.3.0
+
+### Minor Changes
+
+- a6ab4c8: Added `className` prop to `Spacer` component
+- fc6b8f6: Added new `size` variants to `Tabs` component and improved its styling
+
 ## 0.2.0
 
 ### Minor Changes
