@@ -1,57 +1,81 @@
 .list {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
-  gap: var(--space-2);
+  column-gap: var(--space-2);
+  row-gap: var(--space-1);
   align-items: center;
   z-index: 0;
   background-color: var(--gray-2);
   padding: 4px;
-  border-radius: 6px;
+  border-radius: 12px;
+  box-shadow: 0 3px 4px #00000010;
+
+  .tab {
+    display: grid;
+    place-items: center;
+    color: var(--gray-11);
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding-block: 0;
+    appearance: none;
+    user-select: none;
+    white-space: nowrap;
+    word-break: keep-all;
+    cursor: pointer;
+
+    &[data-active] {
+      cursor: default;
+      color: var(--gray-12);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--gray-12);
+      }
+    }
+
+    &:focus-visible {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        outline: 2px solid var(--blue-7);
+      }
+    }
+  }
+
+  &[data-size="md"] {
+    .tab {
+      padding-inline: var(--space-3);
+      height: var(--space-8);
+      font-size: 14px;
+    }
+
+    .indicator {
+      height: var(--space-8);
+    }
+  }
+
+  &[data-size="sm"] {
+    .tab {
+      padding-inline: var(--space-2);
+      height: var(--space-7);
+      font-size: 13px;
+    }
+
+    .indicator {
+      height: var(--space-7);
+    }
+  }
 }
 
 .dark .list {
   --gray-2: var(--gray-1);
-}
-
-.tab {
-  display: grid;
-  place-items: center;
-  color: var(--gray-11);
-  padding-inline: var(--space-3);
-  padding-block: 0;
-  height: var(--space-8);
-  background-color: transparent;
-  border: 0;
-  outline: 0;
-  appearance: none;
-  user-select: none;
-  white-space: nowrap;
-  word-break: keep-all;
-  font-size: 14px;
-  cursor: pointer;
-
-  &[data-active] {
-    cursor: default;
-    color: var(--gray-12);
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      color: var(--gray-12);
-    }
-  }
-
-  &:focus-visible {
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 0.25rem;
-      outline: 2px solid var(--blue-7);
-    }
-  }
 }
 
 .tabSeparator {
@@ -64,12 +88,11 @@
   position: absolute;
   z-index: -1;
   left: 0;
-  top: 50%;
-  translate: var(--active-tab-left) -50%;
+  top: 0%;
+  translate: var(--active-tab-left) var(--active-tab-top);
   width: var(--active-tab-width);
-  height: var(--space-8);
-  border-radius: 4px;
-  background-color: var(--gray-4);
+  border-radius: 10px;
+  background-color: var(--gray-5);
   transition-property: translate, width;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;

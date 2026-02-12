@@ -14,11 +14,13 @@ const Root = ({ className, children, ...props }: TRootProps) => {
   );
 };
 
-type TListProps = ComponentProps<typeof Tabs.List>;
+type TListProps = {
+  size?: "md" | "sm";
+} & ComponentProps<typeof Tabs.List>;
 
-const List = ({ className, children, ...props }: TListProps) => {
+const List = ({ size = "md", className, children, ...props }: TListProps) => {
   return (
-    <Tabs.List className={clsx(className, styles.list)} {...props}>
+    <Tabs.List data-size={size} className={clsx(className, styles.list)} {...props}>
       <>
         {children}
         <Tabs.Indicator className={styles.indicator} />
@@ -37,8 +39,12 @@ const Tab = ({ value, className, children, ...props }: TTabProps) => {
   );
 };
 
-const TabSeparator = () => {
-  return <div className={styles.tabSeparator} />;
+type TTabSeparatorProps = {
+  className?: string;
+};
+
+const TabSeparator = ({ className }: TTabSeparatorProps) => {
+  return <div className={clsx(styles.tabSeparator, className)} />;
 };
 
 type TPanelProps = ComponentProps<typeof Tabs.Panel>;
