@@ -1,5 +1,16 @@
 # @awlt/design
 
+## 0.4.0
+
+### Minor Changes
+
+- b7ae66d: Changed `Tabs.List` component to scroll horizontally when running out of space instead of wrapping to multiple lines
+
+### Patch Changes
+
+- c9c984b: Fixed an issue where `Tabs.TabSeparator` was not being rendered properly
+- 4c4aa67: Fixed an issue with `Input` component getting zoomed in on iOS mobile devices when focused by increasing font size on small screens to 16px
+
 ## 0.3.0
 
 ### Minor Changes
