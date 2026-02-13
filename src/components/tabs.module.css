@@ -80,6 +80,7 @@
 
 .tabSeparator {
   height: var(--space-4);
+  min-width: 1px;
   width: 1px;
   background-color: var(--gray-4);
 }
