@@ -1,9 +1,11 @@
+export { BaseButton } from "./base-button";
 export { Button } from "./button";
 export { Collapsible } from "./collapsible";
 export { IconButton } from "./icon-button";
 export { Input } from "./input";
 export { Loader } from "./loader";
 export { ScrollArea } from "./scroll-area";
+export * as Sidebar from "./sidebar";
 export { Skeleton } from "./skeleton";
 export { Spacer } from "./spacer";
 export * as Tabs from "./tabs";
