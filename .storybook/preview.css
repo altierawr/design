@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: "Geist";
   src: url("/Geist-VariableFont_wght.ttf") format("woff2-variations");
@@ -9,7 +11,6 @@
 * {
   font-family: "Geist";
   box-sizing: border-box;
-  color: var(--gray-12);
 }
 
 h1,
@@ -22,14 +23,20 @@ p {
   margin: 0;
 }
 
-.dark .docs-story {
+.dark {
   background-color: var(--gray-1);
-}
+  color: var(--gray-12);
 
-.dark .sbdocs-wrapper {
-  background-color: var(--gray-1);
-}
+  .docs-story {
+    background-color: var(--gray-1);
+    color: var(--gray-12);
+  }
 
-.dark .sbdocs-title {
-  color: #fff;
+  .sbdocs-wrapper {
+    background-color: var(--gray-1);
+  }
+
+  .sbdocs-title {
+    color: #fff;
+  }
 }
