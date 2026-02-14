@@ -1,20 +1,13 @@
 import clsx from "clsx";
-import { ComponentType } from "react";
-
-import { TIconProps } from "@/utils/types";
 
 import type { TButtonProps } from "./button";
 
 import { Button } from "./button";
 import styles from "./icon-button.module.css";
 
-type TProps = Omit<TButtonProps, "children"> & {
-  icon: ComponentType<TIconProps>;
-};
+type TProps = TButtonProps;
 
-const IconButton = ({ icon, color, variant, onClick, isDisabled, className, size = "md", ...props }: TProps) => {
-  const Icon = icon;
-
+const IconButton = ({ color, variant, onClick, isDisabled, className, size = "md", children, ...props }: TProps) => {
   return (
     <Button
       color={color}
@@ -24,7 +17,7 @@ const IconButton = ({ icon, color, variant, onClick, isDisabled, className, size
       className={clsx(className, styles.iconButton, styles[size])}
       {...props}
     >
-      <Icon size={16} strokeWidth={1.5} />
+      {children}
     </Button>
   );
 };

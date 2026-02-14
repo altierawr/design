@@ -2,11 +2,17 @@
   padding: 0;
   display: grid;
   place-items: center;
-  border-radius: var(--radius-regular);
+  border-radius: 10px;
   outline: 0;
 
   &[data-focus-visible] {
     outline: 2px solid var(--accent-7);
+  }
+
+  svg {
+    width: var(--spacing-4);
+    height: var(--spacing-4);
+    stroke-width: 1.5;
   }
 
   transition:
