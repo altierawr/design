@@ -1,5 +1,11 @@
 # @awlt/design
 
+## 0.5.0
+
+### Minor Changes
+
+- e21ceab: Changed `IconButton` component to accept the icon as a child component instead of as a prop
+
 ## 0.4.0
 
 ### Minor Changes
