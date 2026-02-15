@@ -5,17 +5,82 @@
   flex-direction: column;
   gap: var(--space-8);
 
-  > * {
-    padding-inline: var(--space-4);
+  &[data-is-collapsed="true"] {
+    width: 72px !important;
   }
 
+  transition: width 500ms var(--animation-function);
+
+  --animation-function: cubic-bezier(0, 0, 0.15, 1);
+  --side-padding: var(--space-4);
   --item-left-padding: var(--space-3);
 }
 
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--side-padding);
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
   gap: var(--space-2);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+
+  &[data-is-collapsed="true"] {
+    cursor: e-resize;
+    *:not(img):not(svg):not(.headerLogoImage) {
+      opacity: 0;
+    }
+  }
+
+  *:not(img):not(svg) {
+    transition: opacity 250ms var(--animation-function);
+  }
+}
+
+.headerLogoImage {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  img,
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.headerCollapseButton {
+  cursor: pointer;
+  color: var(--gray-11);
+  cursor: w-resize;
+  opacity: 1;
+
+  &:hover {
+    color: var(--gray-12);
+  }
+
+  &[data-is-collapsed="true"] {
+    cursor: default;
+    opacity: 0;
+    width: 0;
+  }
+
+  transition:
+    color 150ms var(--animation-function),
+    opacity 250ms var(--animation-function),
+    width 500ms var(--animation-function);
 }
 
 .content {
@@ -39,18 +104,42 @@
 }
 
 .groupHeader {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: var(--space-2);
-  padding-left: var(--item-left-padding);
+  padding-left: calc(var(--side-padding) + var(--item-left-padding));
+  padding-right: var(--side-padding);
+
+  &[data-is-collapsed="true"] {
+    gap: 0;
+    padding-right: calc(var(--side-padding) + var(--item-left-padding));
+  }
+
+  transition: gap 500ms var(--animation-function);
 }
 
 .groupTitle {
   font-size: 12px;
   font-weight: 600;
   color: var(--gray-11);
+  opacity: 1;
+  width: 100%;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &[data-is-collapsed="true"] {
+    opacity: 0;
+    width: 0px;
+  }
+
+  transition:
+    opacity 250ms var(--animation-function),
+    width 500ms var(--animation-function);
 }
 
 .groupAction {
@@ -68,6 +157,16 @@
     height: 14px;
     stroke-width: 1.5;
   }
+
+  &[data-is-collapsed="true"] {
+    svg {
+      left: 50%;
+    }
+  }
+
+  transition:
+    right 500ms var(--animation-function),
+    transform 500ms var(--animation-function);
 }
 
 .list {
@@ -79,6 +178,15 @@
 .item {
   position: relative;
   list-style-type: none;
+  padding-inline: var(--side-padding);
+
+  &[data-is-collapsed="true"] {
+    &:has(img) {
+      padding-inline: 14px;
+    }
+  }
+
+  transition: padding-inline 500ms var(--animation-function);
 }
 
 .itemButton {
@@ -87,10 +195,14 @@
   padding-inline: var(--item-left-padding);
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-3);
   font-size: 14px;
   cursor: pointer;
   border-radius: 12px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   background-color: transparent;
   border: none;
@@ -107,18 +219,50 @@
     background-color: var(--gray-5);
   }
 
+  &[data-is-collapsed="true"] {
+    &:has(img) {
+      padding: var(--space-1);
+    }
+
+    span,
+    p {
+      opacity: 0;
+    }
+  }
+
+  span,
+  p {
+    opacity: 1;
+
+    transition: opacity 250ms var(--animation-function);
+  }
+
   text-align: left;
 
   svg {
     width: 16px;
     height: 16px;
+    min-width: 16px;
+    min-height: 16px;
     color: var(--gray-11);
   }
 
+  &[data-is-active="true"] {
+    svg {
+      color: var(--gray-12);
+    }
+  }
+
   img {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
     object-fit: cover;
     border-radius: 6px;
   }
+
+  transition: padding 500ms var(--animation-function);
 }
 
 .footer {

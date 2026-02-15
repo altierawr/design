@@ -18,10 +18,14 @@ export const Default: Story = {
   render: () => {
     return (
       <div className="h-[700px]">
-        <Sidebar.Root className="w-72! bg-(--gray-2)">
+        <Sidebar.Root className="w-[287px] bg-(--gray-2)">
           <Sidebar.Header>
-            <img src="/logo.png" width="32" height="32" />
-            <span>Alt Design</span>
+            <Sidebar.HeaderLogo>
+              <Sidebar.HeaderLogoSquareImage>
+                <img src="/logo.png" />
+              </Sidebar.HeaderLogoSquareImage>
+              <span>Alt Design</span>
+            </Sidebar.HeaderLogo>
           </Sidebar.Header>
           <Sidebar.Content>
             <Sidebar.Group>
@@ -30,22 +34,22 @@ export const Default: Story = {
               </Sidebar.GroupHeader>
 
               <Sidebar.List>
-                <Sidebar.Item>
+                <Sidebar.Item tooltip="Artists">
                   <Sidebar.ItemButton isActive>
                     <UserIcon />
-                    Artists
+                    <span>Artists</span>
                   </Sidebar.ItemButton>
                 </Sidebar.Item>
-                <Sidebar.Item>
+                <Sidebar.Item tooltip="Albums">
                   <Sidebar.ItemButton>
                     <AlbumIcon />
-                    Albums
+                    <span>Albums</span>
                   </Sidebar.ItemButton>
                 </Sidebar.Item>
-                <Sidebar.Item>
+                <Sidebar.Item tooltip="Tracks">
                   <Sidebar.ItemButton>
                     <MusicIcon />
-                    Tracks
+                    <span>Tracks</span>
                   </Sidebar.ItemButton>
                 </Sidebar.Item>
               </Sidebar.List>
@@ -54,87 +58,87 @@ export const Default: Story = {
             <Sidebar.Group variant="compact">
               <Sidebar.GroupHeader>
                 <Sidebar.GroupTitle>Created playlists</Sidebar.GroupTitle>
-                <Sidebar.GroupAction>
+                <Sidebar.GroupAction tooltip="Add playlist">
                   <PlusIcon />
                 </Sidebar.GroupAction>
               </Sidebar.GroupHeader>
 
               <Sidebar.List>
-                <Sidebar.Item>
+                <Sidebar.Item tooltip="Chill">
                   <Sidebar.ItemButton>
-                    <img src="/albumcover2.jpg" width="36" height="36" />
+                    <img src="/albumcover2.jpg" />
                     <div>
                       <p>Chill</p>
                       <p className="text-(--gray-11)! text-xs">54 items</p>
                     </div>
                   </Sidebar.ItemButton>
                 </Sidebar.Item>
-                <Sidebar.Item>
+                <Sidebar.Item tooltip="Rave">
                   <Sidebar.ItemButton>
-                    <img src="/albumcover3.jpg" width="36" height="36" />
+                    <img src="/albumcover3.jpg" />
                     <div>
                       <p>Rave</p>
                       <p className="text-(--gray-11)! text-xs">2 items</p>
                     </div>
                   </Sidebar.ItemButton>
                 </Sidebar.Item>
-                <Sidebar.Item>
+                <Sidebar.Item tooltip="Pure sound">
                   <Sidebar.ItemButton>
-                    <img src="/albumcover1.jpg" width="36" height="36" />
+                    <img src="/albumcover1.jpg" />
                     <div>
                       <p>Pure sound</p>
                       <p className="text-(--gray-11)! text-xs">13 items</p>
                     </div>
                   </Sidebar.ItemButton>
                 </Sidebar.Item>
-                <Sidebar.Item>
+                <Sidebar.Item tooltip="Chill">
                   <Sidebar.ItemButton>
-                    <img src="/albumcover2.jpg" width="36" height="36" />
+                    <img src="/albumcover2.jpg" />
                     <div>
                       <p>Chill</p>
                       <p className="text-(--gray-11)! text-xs">54 items</p>
                     </div>
                   </Sidebar.ItemButton>
                 </Sidebar.Item>
-                <Sidebar.Item>
+                <Sidebar.Item tooltip="Rave">
                   <Sidebar.ItemButton>
-                    <img src="/albumcover3.jpg" width="36" height="36" />
+                    <img src="/albumcover3.jpg" />
                     <div>
                       <p>Rave</p>
                       <p className="text-(--gray-11)! text-xs">2 items</p>
                     </div>
                   </Sidebar.ItemButton>
                 </Sidebar.Item>
-                <Sidebar.Item>
+                <Sidebar.Item tooltip="Pure sound">
                   <Sidebar.ItemButton>
-                    <img src="/albumcover1.jpg" width="36" height="36" />
+                    <img src="/albumcover1.jpg" />
                     <div>
                       <p>Pure sound</p>
                       <p className="text-(--gray-11)! text-xs">13 items</p>
                     </div>
                   </Sidebar.ItemButton>
                 </Sidebar.Item>
-                <Sidebar.Item>
+                <Sidebar.Item tooltip="Chill">
                   <Sidebar.ItemButton>
-                    <img src="/albumcover2.jpg" width="36" height="36" />
+                    <img src="/albumcover2.jpg" />
                     <div>
                       <p>Chill</p>
                       <p className="text-(--gray-11)! text-xs">54 items</p>
                     </div>
                   </Sidebar.ItemButton>
                 </Sidebar.Item>
-                <Sidebar.Item>
+                <Sidebar.Item tooltip="Rave">
                   <Sidebar.ItemButton>
-                    <img src="/albumcover3.jpg" width="36" height="36" />
+                    <img src="/albumcover3.jpg" />
                     <div>
                       <p>Rave</p>
                       <p className="text-(--gray-11)! text-xs">2 items</p>
                     </div>
                   </Sidebar.ItemButton>
                 </Sidebar.Item>
-                <Sidebar.Item>
+                <Sidebar.Item tooltip="Pure sound">
                   <Sidebar.ItemButton>
-                    <img src="/albumcover1.jpg" width="36" height="36" />
+                    <img src="/albumcover1.jpg" />
                     <div>
                       <p>Pure sound</p>
                       <p className="text-(--gray-11)! text-xs">13 items</p>
@@ -146,7 +150,7 @@ export const Default: Story = {
           </Sidebar.Content>
 
           <Sidebar.Footer>
-            <Sidebar.Item>
+            <Sidebar.Item tooltip="Account">
               <Menu.Root>
                 <Menu.Trigger
                   render={
@@ -167,7 +171,7 @@ export const Default: Story = {
                     </Sidebar.ItemButton>
                   }
                 />
-                <Menu.Popup side="top" className="w-(--anchor-width)">
+                <Menu.Popup side="top" className="w-(--anchor-width) min-w-[200px]">
                   <Menu.Item>
                     <SettingsIcon />
                     Account settings
