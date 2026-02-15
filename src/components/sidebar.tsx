@@ -1,7 +1,15 @@
 import { Button as BaseButton } from "@base-ui/react";
 import clsx from "clsx";
 import { ArrowLeftFromLineIcon } from "lucide-react";
-import { createContext, MouseEvent, PropsWithChildren, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  InputHTMLAttributes,
+  MouseEvent,
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 import { Tooltip } from ".";
 import styles from "./sidebar.module.css";
@@ -28,7 +36,8 @@ type TRootProps = {
   isManualCollapsible?: boolean;
   isAutoCollapsible?: boolean;
   autoCollapseThreshold?: number;
-} & TCommonProps;
+} & TCommonProps &
+  InputHTMLAttributes<HTMLDivElement>;
 
 // Tailwind's lg breakpoint
 const DEFAULT_AUTO_COLLAPSE_THRESHOLD = 1024;
@@ -105,7 +114,7 @@ const Root = ({
   );
 };
 
-const Header = ({ className, children, ...props }: TCommonProps) => {
+const Header = ({ className, children, ...props }: TCommonProps & InputHTMLAttributes<HTMLDivElement>) => {
   const { isCollapsed, isManualCollapsible, collapseManually } = useContext(SidebarCollapsedContext);
 
   const handleCollapseButtonClick = (e: MouseEvent) => {
@@ -129,7 +138,7 @@ const Header = ({ className, children, ...props }: TCommonProps) => {
   );
 };
 
-const HeaderLogo = ({ className, children, ...props }: TCommonProps) => {
+const HeaderLogo = ({ className, children, ...props }: TCommonProps & BaseButton.Props) => {
   const { isCollapsed, isManualCollapsible, isAutoCollapsed, expandManually } = useContext(SidebarCollapsedContext);
   const canExpandManually = isCollapsed && isManualCollapsible && !isAutoCollapsed;
 
@@ -152,15 +161,26 @@ const HeaderLogo = ({ className, children, ...props }: TCommonProps) => {
   );
 };
 
-const HeaderLogoSquareImage = ({ className, children, ...props }: TCommonProps) => {
+const HeaderLogoSquareImage = ({
+  className,
+  children,
+  ...props
+}: TCommonProps & InputHTMLAttributes<HTMLDivElement>) => {
+  const { isCollapsed, isAutoCollapsed } = useContext(SidebarCollapsedContext);
+
   return (
-    <div className={clsx(styles.headerLogoImage, className)} {...props}>
+    <div
+      className={clsx(styles.headerLogoImage, className)}
+      data-is-collapsed={isCollapsed}
+      data-is-auto-collapsed={isAutoCollapsed}
+      {...props}
+    >
       {children}
     </div>
   );
 };
 
-const Content = ({ className, children, ...props }: TCommonProps) => {
+const Content = ({ className, children, ...props }: TCommonProps & InputHTMLAttributes<HTMLDivElement>) => {
   return (
     <div className={clsx(styles.content, className)} {...props}>
       {children}
@@ -172,7 +192,12 @@ type TGroupProps = {
   variant?: "compact" | "normal";
 } & TCommonProps;
 
-const Group = ({ variant = "normal", className, children, ...props }: TGroupProps) => {
+const Group = ({
+  variant = "normal",
+  className,
+  children,
+  ...props
+}: TGroupProps & InputHTMLAttributes<HTMLDivElement>) => {
   return (
     <section className={clsx(styles.group, className)} data-variant={variant} {...props}>
       {children}
@@ -180,7 +205,7 @@ const Group = ({ variant = "normal", className, children, ...props }: TGroupProp
   );
 };
 
-const GroupHeader = ({ className, children, ...props }: TCommonProps) => {
+const GroupHeader = ({ className, children, ...props }: TCommonProps & InputHTMLAttributes<HTMLDivElement>) => {
   const { isCollapsed } = useContext(SidebarCollapsedContext);
 
   return (
@@ -190,7 +215,7 @@ const GroupHeader = ({ className, children, ...props }: TCommonProps) => {
   );
 };
 
-const GroupTitle = ({ className, children, ...props }: TCommonProps) => {
+const GroupTitle = ({ className, children, ...props }: TCommonProps & InputHTMLAttributes<HTMLDivElement>) => {
   const { isCollapsed } = useContext(SidebarCollapsedContext);
 
   return (
@@ -223,7 +248,7 @@ const GroupAction = ({ tooltip, className, children, ...props }: TGroupActionPro
   );
 };
 
-const List = ({ className, children, ...props }: TCommonProps) => {
+const List = ({ className, children, ...props }: TCommonProps & InputHTMLAttributes<HTMLUListElement>) => {
   return (
     <ul className={clsx(styles.list, className)} {...props}>
       {children}
@@ -235,7 +260,7 @@ type TItemProps = {
   tooltip?: string;
 } & TCommonProps;
 
-const Item = ({ tooltip, className, children, ...props }: TItemProps) => {
+const Item = ({ tooltip, className, children, ...props }: TItemProps & InputHTMLAttributes<HTMLLIElement>) => {
   const { isCollapsed } = useContext(SidebarCollapsedContext);
 
   return (
@@ -275,7 +300,7 @@ const ItemButton = ({ isActive, className, children, ...props }: TItemButtonProp
   );
 };
 
-const Footer = ({ className, children, ...props }: TCommonProps) => {
+const Footer = ({ className, children, ...props }: TCommonProps & InputHTMLAttributes<HTMLDivElement>) => {
   return (
     <footer className={clsx(styles.footer, className)} {...props}>
       {children}
