@@ -1,31 +1,101 @@
 import { Button as BaseButton } from "@base-ui/react";
 import clsx from "clsx";
 import { ArrowLeftFromLineIcon } from "lucide-react";
-import { createContext, MouseEvent, PropsWithChildren, useContext, useState } from "react";
+import { createContext, MouseEvent, PropsWithChildren, useContext, useEffect, useState } from "react";
 
 import { Tooltip } from ".";
 import styles from "./sidebar.module.css";
 
 const SidebarCollapsedContext = createContext<{
   isCollapsed: boolean;
-  setIsCollapsed: (value: boolean) => void;
+  isManualCollapsible: boolean;
+  isAutoCollapsed: boolean;
+  collapseManually: () => void;
+  expandManually: () => void;
 }>({
   isCollapsed: false,
-  setIsCollapsed: () => {},
+  isManualCollapsible: false,
+  isAutoCollapsed: false,
+  collapseManually: () => {},
+  expandManually: () => {},
 });
 
 type TCommonProps = {
   className?: string;
 } & PropsWithChildren;
 
-const Root = ({ className, children, ...props }: TCommonProps) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+type TRootProps = {
+  isManualCollapsible?: boolean;
+  isAutoCollapsible?: boolean;
+  autoCollapseThreshold?: number;
+} & TCommonProps;
+
+// Tailwind's lg breakpoint
+const DEFAULT_AUTO_COLLAPSE_THRESHOLD = 1024;
+
+const Root = ({
+  className,
+  children,
+  isManualCollapsible = false,
+  isAutoCollapsible = false,
+  autoCollapseThreshold = DEFAULT_AUTO_COLLAPSE_THRESHOLD,
+  ...props
+}: TRootProps) => {
+  const [isManuallyCollapsed, setIsManuallyCollapsed] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(() =>
+    typeof window === "undefined" ? Number.POSITIVE_INFINITY : window.innerWidth,
+  );
+
+  useEffect(() => {
+    if (!isManualCollapsible) {
+      setIsManuallyCollapsed(false);
+    }
+  }, [isManualCollapsible]);
+
+  useEffect(() => {
+    if (!isAutoCollapsible || typeof window === "undefined") {
+      return;
+    }
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isAutoCollapsible]);
+
+  const isAutoCollapsed = isAutoCollapsible && windowWidth < autoCollapseThreshold;
+  const isCollapsed = isAutoCollapsed || isManuallyCollapsed;
+
+  const collapseManually = () => {
+    if (!isManualCollapsible || isAutoCollapsed) {
+      return;
+    }
+
+    setIsManuallyCollapsed(true);
+  };
+
+  const expandManually = () => {
+    if (!isManualCollapsible || isAutoCollapsed) {
+      return;
+    }
+
+    setIsManuallyCollapsed(false);
+  };
 
   return (
     <SidebarCollapsedContext
       value={{
         isCollapsed,
-        setIsCollapsed,
+        isManualCollapsible,
+        isAutoCollapsed,
+        collapseManually,
+        expandManually,
       }}
     >
       <aside className={clsx(styles.root, className)} data-is-collapsed={isCollapsed} {...props}>
@@ -36,38 +106,36 @@ const Root = ({ className, children, ...props }: TCommonProps) => {
 };
 
 const Header = ({ className, children, ...props }: TCommonProps) => {
-  const { isCollapsed, setIsCollapsed } = useContext(SidebarCollapsedContext);
+  const { isCollapsed, isManualCollapsible, collapseManually } = useContext(SidebarCollapsedContext);
 
   const handleCollapseButtonClick = (e: MouseEvent) => {
-    if (isCollapsed) {
-      e.preventDefault();
-      return;
-    }
-
     e.stopPropagation();
-    setIsCollapsed(!isCollapsed);
+    collapseManually();
   };
 
   return (
     <header className={clsx(styles.header, className)} data-is-collapsed={isCollapsed} {...props}>
       {children}
-      <BaseButton
-        className={styles.headerCollapseButton}
-        data-is-collapsed={isCollapsed}
-        onClick={handleCollapseButtonClick}
-      >
-        <ArrowLeftFromLineIcon size={16} strokeWidth={1.5} />
-      </BaseButton>
+      {isManualCollapsible && (
+        <BaseButton
+          className={styles.headerCollapseButton}
+          data-is-collapsed={isCollapsed}
+          onClick={handleCollapseButtonClick}
+        >
+          <ArrowLeftFromLineIcon size={16} strokeWidth={1.5} />
+        </BaseButton>
+      )}
     </header>
   );
 };
 
 const HeaderLogo = ({ className, children, ...props }: TCommonProps) => {
-  const { isCollapsed, setIsCollapsed } = useContext(SidebarCollapsedContext);
+  const { isCollapsed, isManualCollapsible, isAutoCollapsed, expandManually } = useContext(SidebarCollapsedContext);
+  const canExpandManually = isCollapsed && isManualCollapsible && !isAutoCollapsed;
 
   const handleLogoClick = () => {
     if (isCollapsed) {
-      setIsCollapsed(false);
+      expandManually();
     }
   };
 
@@ -75,6 +143,7 @@ const HeaderLogo = ({ className, children, ...props }: TCommonProps) => {
     <BaseButton
       className={clsx(styles.headerLogo, className)}
       data-is-collapsed={isCollapsed}
+      data-can-expand-manually={canExpandManually}
       onClick={handleLogoClick}
       {...props}
     >

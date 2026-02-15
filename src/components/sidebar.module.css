@@ -34,9 +34,18 @@
   font-weight: 500;
 
   &[data-is-collapsed="true"] {
-    cursor: e-resize;
     *:not(img):not(svg):not(.headerLogoImage) {
       opacity: 0;
+    }
+  }
+
+  &[data-is-collapsed="true"] {
+    &[data-can-expand-manually="true"] {
+      cursor: e-resize;
+    }
+
+    &[data-can-expand-manually="false"] {
+      cursor: default;
     }
   }
 
