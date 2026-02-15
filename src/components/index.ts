@@ -10,3 +10,4 @@ export { Skeleton } from "./skeleton";
 export { Spacer } from "./spacer";
 export * as Tabs from "./tabs";
 export * as Menu from "./menu";
+export * as Tooltip from "./tooltip";
