@@ -1,5 +1,13 @@
 # @awlt/design
 
+## 0.6.0
+
+### Minor Changes
+
+- 7f07235: Added `Tooltip` component
+- 5f0f872: Added `BaseButton` component (unstyled Button)
+- de84b41: Added `Sidebar` component
+
 ## 0.5.0
 
 ### Minor Changes
