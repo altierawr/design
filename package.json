@@ -19,7 +19,7 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./lib/index.d.ts",
+      "types": "./lib/src/index.d.ts",
       "default": "./lib/index.js"
     },
     "./styles.css": "./lib/styles.css",
