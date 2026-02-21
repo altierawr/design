@@ -7,6 +7,7 @@ import "../src/styles/tokens/colors/blue.css";
 import "../src/styles/tokens/colors/gray.css";
 import "../src/styles/tokens/colors/red.css";
 import "../src/styles/tokens/colors/yellow.css";
+import "../src/styles/tokens/colors/green.css";
 import "./preview.css";
 
 const preview: Preview = {
