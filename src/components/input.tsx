@@ -25,7 +25,7 @@ const Input = ({ errors, leftIcon, isLoading, className, isDisabled, placeholder
         {IconLeft !== undefined && !isLoading && <IconLeft size={20} strokeWidth={1.5} className={styles.iconLeft} />}
         {isLoading && (
           <div className={styles.loaderContainer}>
-            <Loader className={styles.loader} />
+            <Loader size={20} />
           </div>
         )}
         <BaseInput

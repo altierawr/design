@@ -62,11 +62,6 @@
   transform: translateY(-50%);
 }
 
-.loader {
-  width: var(--space-5) !important;
-  height: var(--space-5) !important;
-}
-
 .iconLeft {
   color: var(--accent-11);
   position: absolute;

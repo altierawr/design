@@ -1,24 +1,29 @@
 .loader {
+  --loader-size: 20px;
+  --loader-bar-width: clamp(1px, calc(var(--loader-size) * 0.07), 6px);
+  --loader-bar-height: clamp(4px, calc(var(--loader-size) * 0.24), 14px);
+
   position: relative;
-  width: var(--space-5);
-  height: var(--space-5);
-  border-radius: 10px;
+  width: var(--loader-size);
+  height: var(--loader-size);
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .loader div {
-  width: 7%;
-  height: 24%;
+  width: var(--loader-bar-width);
+  height: var(--loader-bar-height);
   color: var(--accent-11);
   background-color: currentColor;
   position: absolute;
   left: 50%;
   top: 50%;
   opacity: 0;
-  border-radius: 999px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  border-radius: calc(var(--loader-bar-width) / 2);
+  box-shadow: 0 0 calc(var(--loader-size) * 0.12) rgba(0, 0, 0, 0.2);
   animation: fade 1.2s linear infinite;
   transform-origin: center 0%;
-  margin-left: -4%;
+  margin-left: calc(var(--loader-bar-width) / -2);
 }
 
 @keyframes fade {
