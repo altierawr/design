@@ -8,8 +8,8 @@ import styles from "./button.module.css";
 import { Loader } from "./loader";
 
 export type TButtonProps = Omit<BaseButton.Props, "render" | "nativeButton" | "disabled"> & {
-  color: TColor;
-  variant: "solid" | "surface" | "soft" | "outline" | "ghost";
+  color?: TColor;
+  variant?: "solid" | "surface" | "soft" | "outline" | "ghost";
   size?: "xs" | "sm" | "md";
   onClick?: () => void;
   isDisabled?: boolean;
@@ -20,8 +20,8 @@ export type TButtonProps = Omit<BaseButton.Props, "render" | "nativeButton" | "d
 
 const Button = ({
   children,
-  color,
-  variant,
+  color = "whiteblack",
+  variant = "solid",
   size = "md",
   onClick,
   isDisabled,

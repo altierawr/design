@@ -3,6 +3,10 @@
   outline: 1px solid transparent;
   cursor: pointer;
 
+  &[data-disabled] {
+    cursor: default;
+  }
+
   position: relative;
   overflow: hidden;
 
@@ -14,8 +18,18 @@
   color: var(--accent-contrast);
   background-color: var(--accent-9);
 
+  &[data-accent-color="whiteblack"] {
+    background-color: var(--gray-12);
+    color: var(--gray-1);
+  }
+
   &:hover {
     background-color: var(--accent-10);
+
+    &[data-accent-color="whiteblack"] {
+      background-color: var(--gray-12);
+      filter: brightness(0.9);
+    }
   }
 
   &:active:not([data-disabled]) {
@@ -115,6 +129,7 @@
 .soft {
   color: var(--accent-12);
   background-color: var(--accent-3);
+  box-shadow: 0 3px 4px #00000005;
   border: 0;
 
   &:hover {
@@ -202,17 +217,17 @@
 }
 
 .ghost {
-  width: auto;
-  height: auto;
-  color: var(--gray-11);
   background-color: transparent;
   box-shadow: none;
   border: 0;
+  color: var(--accent-12);
 
-  &:hover,
+  &:hover {
+    background-color: var(--accent-3);
+  }
+
   &:active:not([data-disabled]) {
-    color: var(--accent-12);
-    background-color: transparent;
+    background-color: var(--accent-4);
   }
 
   .loader div {

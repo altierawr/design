@@ -21,13 +21,28 @@ export const Default: Story = {
   render: () => {
     return (
       <div>
+        <h3>White black</h3>
+        <div className="flex gap-2">
+          <Button color="whiteblack" variant="solid" size="xs">
+            Button long text
+          </Button>
+          <Button color="whiteblack" variant="surface" size="xs">
+            Button
+          </Button>
+          <Button color="whiteblack" variant="soft" size="xs">
+            Button
+          </Button>
+          <Button color="whiteblack" variant="outline" size="xs">
+            Button
+          </Button>
+          <Button color="whiteblack" variant="ghost" size="xs">
+            Button
+          </Button>
+        </div>
+
+        <Spacer size="3" />
         <h3>Extra small</h3>
-        <div
-          style={{
-            display: "flex",
-            gap: "8px",
-          }}
-        >
+        <div className="flex gap-2">
           <Button color="blue" variant="solid" size="xs">
             Button long text
           </Button>
@@ -122,6 +137,12 @@ export const Default: Story = {
             Loading Button
           </Button>
         </div>
+
+        <Spacer size="3" />
+        <h3>Disabled</h3>
+        <Button color="blue" isDisabled>
+          Disabled button
+        </Button>
       </div>
     );
   },
