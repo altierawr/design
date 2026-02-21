@@ -1,6 +1,8 @@
+export * as AlertDialog from "./alert-dialog";
 export { BaseButton } from "./base-button";
 export { Button } from "./button";
 export { Collapsible } from "./collapsible";
+export * as Dialog from "./dialog";
 export { IconButton } from "./icon-button";
 export { Input } from "./input";
 export { Loader } from "./loader";
@@ -11,3 +13,4 @@ export { Spacer } from "./spacer";
 export * as Tabs from "./tabs";
 export * as Menu from "./menu";
 export * as Tooltip from "./tooltip";
+export * from "./toast";
