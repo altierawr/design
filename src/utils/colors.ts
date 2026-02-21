@@ -1,4 +1,5 @@
 export type TColor =
+  | "whiteblack"
   | "gray"
   | "mauve"
   | "slate"
