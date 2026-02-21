@@ -70,83 +70,35 @@ const SidebarDemo = ({ rootProps }: TSidebarDemoProps) => {
             <Sidebar.List>
               <Sidebar.Item tooltip="Chill">
                 <Sidebar.ItemButton>
-                  <img src="/albumcover2.jpg" />
-                  <div>
+                  <Sidebar.ItemButtonImageBlock>
+                    <img src="/albumcover2.jpg" />
+                  </Sidebar.ItemButtonImageBlock>
+                  <Sidebar.ItemButtonBody>
                     <p>Chill</p>
                     <p className="text-(--gray-11)! text-xs">54 items</p>
-                  </div>
+                  </Sidebar.ItemButtonBody>
                 </Sidebar.ItemButton>
               </Sidebar.Item>
               <Sidebar.Item tooltip="Rave">
                 <Sidebar.ItemButton>
-                  <img src="/albumcover3.jpg" />
-                  <div>
+                  <Sidebar.ItemButtonImageBlock>
+                    <img src="/albumcover3.jpg" />
+                  </Sidebar.ItemButtonImageBlock>
+                  <Sidebar.ItemButtonBody>
                     <p>Rave</p>
                     <p className="text-(--gray-11)! text-xs">2 items</p>
-                  </div>
+                  </Sidebar.ItemButtonBody>
                 </Sidebar.ItemButton>
               </Sidebar.Item>
               <Sidebar.Item tooltip="Pure sound">
                 <Sidebar.ItemButton>
-                  <img src="/albumcover1.jpg" />
-                  <div>
-                    <p>Pure sound</p>
+                  <Sidebar.ItemButtonImageBlock>
+                    <img src="/albumcover1.jpg" />
+                  </Sidebar.ItemButtonImageBlock>
+                  <Sidebar.ItemButtonBody>
+                    <p>Pure sound with a very long name</p>
                     <p className="text-(--gray-11)! text-xs">13 items</p>
-                  </div>
-                </Sidebar.ItemButton>
-              </Sidebar.Item>
-              <Sidebar.Item tooltip="Chill">
-                <Sidebar.ItemButton>
-                  <img src="/albumcover2.jpg" />
-                  <div>
-                    <p>Chill</p>
-                    <p className="text-(--gray-11)! text-xs">54 items</p>
-                  </div>
-                </Sidebar.ItemButton>
-              </Sidebar.Item>
-              <Sidebar.Item tooltip="Rave">
-                <Sidebar.ItemButton>
-                  <img src="/albumcover3.jpg" />
-                  <div>
-                    <p>Rave</p>
-                    <p className="text-(--gray-11)! text-xs">2 items</p>
-                  </div>
-                </Sidebar.ItemButton>
-              </Sidebar.Item>
-              <Sidebar.Item tooltip="Pure sound">
-                <Sidebar.ItemButton>
-                  <img src="/albumcover1.jpg" />
-                  <div>
-                    <p>Pure sound</p>
-                    <p className="text-(--gray-11)! text-xs">13 items</p>
-                  </div>
-                </Sidebar.ItemButton>
-              </Sidebar.Item>
-              <Sidebar.Item tooltip="Chill">
-                <Sidebar.ItemButton>
-                  <img src="/albumcover2.jpg" />
-                  <div>
-                    <p>Chill</p>
-                    <p className="text-(--gray-11)! text-xs">54 items</p>
-                  </div>
-                </Sidebar.ItemButton>
-              </Sidebar.Item>
-              <Sidebar.Item tooltip="Rave">
-                <Sidebar.ItemButton>
-                  <img src="/albumcover3.jpg" />
-                  <div>
-                    <p>Rave</p>
-                    <p className="text-(--gray-11)! text-xs">2 items</p>
-                  </div>
-                </Sidebar.ItemButton>
-              </Sidebar.Item>
-              <Sidebar.Item tooltip="Pure sound">
-                <Sidebar.ItemButton>
-                  <img src="/albumcover1.jpg" />
-                  <div>
-                    <p>Pure sound</p>
-                    <p className="text-(--gray-11)! text-xs">13 items</p>
-                  </div>
+                  </Sidebar.ItemButtonBody>
                 </Sidebar.ItemButton>
               </Sidebar.Item>
             </Sidebar.List>

@@ -121,6 +121,7 @@
   gap: var(--space-2);
   padding-left: calc(var(--side-padding) + var(--item-left-padding));
   padding-right: var(--side-padding);
+  user-select: none;
 
   &[data-is-collapsed="true"] {
     gap: 0;
@@ -190,7 +191,7 @@
   padding-inline: var(--side-padding);
 
   &[data-is-collapsed="true"] {
-    &:has(img) {
+    &:has(.itemButtonImageBlock) {
       padding-inline: 14px;
     }
   }
@@ -229,7 +230,7 @@
   }
 
   &[data-is-collapsed="true"] {
-    &:has(img) {
+    &:has(.itemButtonImageBlock) {
       padding: var(--space-1);
     }
 
@@ -244,6 +245,10 @@
     opacity: 1;
 
     transition: opacity 250ms var(--animation-function);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-clamp: 1;
   }
 
   text-align: left;
@@ -262,16 +267,23 @@
     }
   }
 
-  img {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-    min-height: 36px;
-    object-fit: cover;
-    border-radius: 6px;
-  }
-
   transition: padding 500ms var(--animation-function);
+}
+
+.itemButtonImageBlock {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.itemButtonBody {
+  overflow: hidden;
 }
 
 .footer {

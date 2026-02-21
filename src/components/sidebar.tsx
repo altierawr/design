@@ -300,6 +300,22 @@ const ItemButton = ({ isActive, className, children, ...props }: TItemButtonProp
   );
 };
 
+type TItemButtonImageBlockProps = {
+  className?: string;
+} & PropsWithChildren;
+
+const ItemButtonImageBlock = ({ className, children }: TItemButtonImageBlockProps) => {
+  return <div className={clsx(styles.itemButtonImageBlock, className)}>{children}</div>;
+};
+
+type TItemButtonBodyProps = {
+  className?: string;
+} & PropsWithChildren;
+
+const ItemButtonBody = ({ className, children }: TItemButtonBodyProps) => {
+  return <div className={clsx(styles.itemButtonBody, className)}>{children}</div>;
+};
+
 const Footer = ({ className, children, ...props }: TCommonProps & InputHTMLAttributes<HTMLDivElement>) => {
   return (
     <footer className={clsx(styles.footer, className)} {...props}>
@@ -321,5 +337,7 @@ export {
   List,
   Item,
   ItemButton,
+  ItemButtonImageBlock,
+  ItemButtonBody,
   Footer,
 };
