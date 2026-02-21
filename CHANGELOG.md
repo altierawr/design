@@ -1,5 +1,18 @@
 # @awlt/design
 
+## 0.7.0
+
+### Minor Changes
+
+- 6886fd7: Added `AlertDialog` component.
+- a5ce7a4: Added new color `whiteblack` (almost pure white and black).
+- b0a82d8: Added `Toast` component.
+- ad10bc0: The `Loader` component now accepts an optional `size` prop for rendering the loader in different sizes. Defaults to 20.
+- ed34ad5: Added new image and body blocks to `Sidebar` component for easier layout handling.
+- 4e52718: Made `color` and `variant` props optional on the `Button` component. It now defaults to `whiteblack` and `solid` respectively.
+- e3048e0: Added `Dialog` component.
+- 6bf679c: Added nested menu support & checkbox item support to `Menu` component.
+
 ## 0.6.0
 
 ### Minor Changes
