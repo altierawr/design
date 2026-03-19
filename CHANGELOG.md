@@ -1,5 +1,11 @@
 # @awlt/design
 
+## 0.8.0
+
+### Minor Changes
+
+- 3a087a1: Moved token definitions to typescript & exported them for use in typescript applications (mainly for react native).
+
 ## 0.7.0
 
 ### Minor Changes
