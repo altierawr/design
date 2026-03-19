@@ -7,4 +7,4 @@ temp
 *storybook.log
 storybook-static
 
-./src/styles/tokens
+src/styles/tokens
