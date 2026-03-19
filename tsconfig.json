@@ -4,8 +4,10 @@
     "jsx": "react-jsx",
     "moduleResolution": "bundler",
     "module": "ESNext",
+    "target": "ESNext",
     "declaration": true,
     "emitDeclarationOnly": true,
+    "allowImportingTsExtensions": true,
     "outDir": "lib",
     "strict": true,
     "skipLibCheck": true,
@@ -14,5 +16,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "vite.config.ts"]
+  "include": ["src", "src/scripts", "vite.config.ts"]
 }
