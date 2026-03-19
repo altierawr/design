@@ -15,18 +15,27 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    icon: Heart,
     color: "blue",
     variant: "solid",
   },
   render: () => {
     return (
-      <div style={{ display: "flex", gap: "var(--space-2)" }}>
-        <IconButton color="blue" variant="solid" icon={Heart} />
-        <IconButton color="blue" variant="surface" icon={Heart} />
-        <IconButton color="blue" variant="soft" icon={Heart} />
-        <IconButton color="blue" variant="outline" icon={Heart} />
-        <IconButton color="blue" variant="ghost" icon={Heart} />
+      <div className="flex gap-2">
+        <IconButton color="blue" variant="solid">
+          <Heart />
+        </IconButton>
+        <IconButton color="blue" variant="surface">
+          <Heart />
+        </IconButton>
+        <IconButton color="blue" variant="soft">
+          <Heart />
+        </IconButton>
+        <IconButton color="blue" variant="outline">
+          <Heart />
+        </IconButton>
+        <IconButton color="blue" variant="ghost">
+          <Heart />
+        </IconButton>
       </div>
     );
   },
